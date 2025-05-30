@@ -19,9 +19,8 @@ console.log (teachers); // ["Luca", "Lewis", "Carlo", "Phil", "Fabio", "Ed", "Na
 
 const longNames = [];
 for (let i = 0; i < teachers.length; i++) {
-  const teacherName = teachers[i];
-  if (teacherName.length >= 5) {
-    longNames.push (teacherName);
+  if (teachers[i].length >= 5) {
+    longNames.push (teachers[i]);
   }
 }
 console.log (longNames); // ["Lewis", "Carlo", "Fabio", "Nathan"]
@@ -34,8 +33,23 @@ console.log (teachers); // ["Luca", "Lewis", "Carlo", "Phil", "Fabio", "Nathan"]
 // 4. Verifica se 'Fabio' è presente nell'array teachers
 // e salva il risultato nella variabile isFabioPresent
 
-const isFabioPresent = null;
+let isFabioPresent = null;
+for (let i = 0; i < teachers.length; i++) {
+  if (teachers[i] === 'Fabio') {
+    isFabioPresent = true;
+    break;
+  }
+}
+console.log (isFabioPresent); // true
 
-// 5. Unisci tutti gli insegnanti nell'array teachers in una stringa  separata da virgole e salvala nella variabile teachersString
+// 5. Unisci tutti gli insegnanti nell'array teachers in una stringa separata da virgole e salvala nella variabile teachersString
 
-const teachersString = null;
+let teachersString = "";
+for (let i = 0; i < teachers.length; i++) {
+  if (i === 0 ) {
+    teachersString = teachersString + teachers[i]
+  } else {
+    teachersString = teachersString + ', ' + teachers[i];
+  }
+}
+console.log (teachersString);
